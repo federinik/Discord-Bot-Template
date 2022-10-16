@@ -1,4 +1,6 @@
-﻿using MongoDB.Driver;
+﻿using Bot.persistence.MongoDb.Extensions;
+using Microsoft.Extensions.Configuration;
+using MongoDB.Driver;
 
 namespace Bot.persistence.MongoDb;
 
@@ -12,18 +14,14 @@ public class MongoContext : BaseMongoContext
     /// <summary>
     ///     Creates a new <see cref="MongoContext" />.
     /// </summary>
-    public MongoContext()
-    {
-        var client = new MongoClient(ConnectionStringHelper.GetMongoDbConnectionString());
-        _database = client.GetDatabase("Bot");
-    }
+    public MongoContext(IConfiguration config) : this(config.GetConnString()) { }
 
     /// <summary>
     ///     Creates a new <see cref="MongoContext" />.
     /// </summary>
     /// <param name="connectionString">The connection string that will be used to connect to the Database.</param>
     /// <param name="databaseName">The name of the database.</param>
-    public MongoContext(string connectionString, string databaseName)
+    public MongoContext(string connectionString, string databaseName = Constants.DatabaseName)
     {
         var client = new MongoClient(connectionString);
         _database = client.GetDatabase(databaseName);

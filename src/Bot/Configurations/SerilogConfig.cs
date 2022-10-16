@@ -8,7 +8,7 @@ public static class SerilogConfig
     /// <summary>
     ///     Configures misc settings for serilog.
     /// </summary>
-    public static void Configure()
+    public static void Configure(IConfiguration config)
     {
         Log.Logger = new LoggerConfiguration()
                      #if DEBUG
@@ -26,7 +26,7 @@ public static class SerilogConfig
                      .WriteTo.Async(writeTo =>
                      {
                          writeTo.Console();
-                         writeTo.MongoDb();
+                         writeTo.MongoDb(config);
                      }).CreateLogger();
     }
 

@@ -5,22 +5,23 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <UserSecretsId>e6bfb94d-7772-41c4-9c55-6cf8d70d5260</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Bot.Discord\Bot.Discord.csproj"/>
+        <ProjectReference Include="..\Bot.Discord\Bot.Discord.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Serilog.AspNetCore" Version="6.0.1"/>
-        <PackageReference Include="Serilog.Enrichers.AssemblyName" Version="1.0.9"/>
-        <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0"/>
-        <PackageReference Include="Serilog.Enrichers.Process" Version="2.0.2"/>
-        <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0"/>
-        <PackageReference Include="Serilog.Extensions.Hosting" Version="5.0.1"/>
-        <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0"/>
-        <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0"/>
-        <PackageReference Include="Serilog.Sinks.MongoDB" Version="5.3.1"/>
+        <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
+        <PackageReference Include="Serilog.Enrichers.AssemblyName" Version="1.0.9" />
+        <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+        <PackageReference Include="Serilog.Enrichers.Process" Version="2.0.2" />
+        <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+        <PackageReference Include="Serilog.Extensions.Hosting" Version="5.0.1" />
+        <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
+        <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+        <PackageReference Include="Serilog.Sinks.MongoDB" Version="5.3.1" />
     </ItemGroup>
 
 </Project>

@@ -9,8 +9,6 @@ public class Program
 {
     public static async Task<int> Main(string[] args)
     {
-        SerilogConfig.Configure();
-
         try
         {
             Log.Information("Starting Bot web host");

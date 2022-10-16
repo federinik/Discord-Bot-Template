@@ -5,8 +5,8 @@ namespace Bot.Discord;
 public class Constants
 {
     // Todo: Replace the publicKey and the botId with yours. https://discord.com/developers/applications.
-    public const string PublicKey = "5d7890af1ce9b286d76e8129891e8acff77782a1b2e6f06e6023fa09557c8c1d";
-    public const long BotId = 541336442979483658;
+    public const string PublicKey = "eee70feae02552c5b44ae2bc7bcbe9b90f3727fc4bba83552c5181292536120b";
+    public const long BotId = 1031194086092312596;
 
     public const string ArgsSeparator = ";";
     public const string SlashPrefix = "/";

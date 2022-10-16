@@ -1,4 +1,6 @@
-﻿using MongoDB.Driver;
+﻿using Bot.persistence.MongoDb.Extensions;
+using Microsoft.Extensions.Configuration;
+using MongoDB.Driver;
 using Serilog;
 using Serilog.Configuration;
 using Serilog.Sinks.Mongodb.TimeSeries.Configurations;
@@ -16,9 +18,9 @@ public static class MongoDbLogSink
     /// <returns>
     ///     The sink configurations.
     /// </returns>
-    public static LoggerConfiguration MongoDb(this LoggerSinkConfiguration configuration)
+    public static LoggerConfiguration MongoDb(this LoggerSinkConfiguration configuration, IConfiguration config)
     {
-        var client = new MongoClient(ConnectionStringHelper.GetMongoDbConnectionString());
+        var client = new MongoClient(config.GetConnString());
         var mongoDatabase = client.GetDatabase(Constants.DatabaseName);
 
         var configs = new MongoDbTimeSeriesSinkConfig(mongoDatabase)
